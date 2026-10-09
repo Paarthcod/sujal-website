@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', 'Manrope', system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0B1220;
+  color: #F1F4F8;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1220;
+}
+::-webkit-scrollbar-thumb {
+  background: #162238;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #24324A;
+}
+
+/* Base Card Design System (60/30/10 Rule) */
+.drt-card {
+  background-color: #111B2E;
+  border: 1px solid #24324A;
+  border-radius: 0.875rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drt-card-hover:hover {
+  border-color: #3A5B99;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Branch Identity Badges (Soft & Muted, Not Saturated) */
+.org-badge-army {
+  background-color: rgba(120, 134, 107, 0.18);
+  color: #a3b893;
+  border: 1px solid rgba(120, 134, 107, 0.3);
+}
+
+.org-badge-navy {
+  background-color: rgba(82, 121, 168, 0.18);
+  color: #8daed8;
+  border: 1px solid rgba(82, 121, 168, 0.3);
+}
+
+.org-badge-airforce {
+  background-color: rgba(111, 145, 181, 0.18);
+  color: #9cb6d6;
+  border: 1px solid rgba(111, 145, 181, 0.3);
+}
+
+.org-badge-capf {
+  background-color: rgba(113, 128, 150, 0.2);
+  color: #cbd5e1;
+  border: 1px solid rgba(113, 128, 150, 0.3);
+}
+
+.org-badge-coastguard {
+  background-color: rgba(79, 143, 138, 0.18);
+  color: #7ab8b3;
+  border: 1px solid rgba(79, 143, 138, 0.3);
+}
+
+/* Accent Colors */
+.accent-blue {
+  color: #5B8DEF;
+}
+
+.bg-accent-blue {
+  background-color: #5B8DEF;
+}
+
+.border-accent-blue {
+  border-color: #5B8DEF;
+}
+
+/* Official Tricolor Top Accent Line */
+.tricolor-stripe {
+  height: 3px;
+  background: linear-gradient(90deg, #e67e22 0%, #e67e22 33.3%, #ffffff 33.3%, #ffffff 66.6%, #27ae60 66.6%, #27ae60 100%);
+  opacity: 0.85;
+}
+
+/* Splash Screen Opening Zoom Animations */
+@keyframes splashZoomIn {
+  0% {
+    transform: scale(0.65);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  45% {
+    transform: scale(1.05);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  80% {
+    transform: scale(1.0);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0.95;
+    filter: blur(0px);
+  }
+}
+
+@keyframes pulseTricolorGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(255, 153, 51, 0.4), 0 0 45px rgba(19, 136, 8, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(255, 153, 51, 0.7), 0 0 80px rgba(19, 136, 8, 0.6);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-splash-zoom {
+  animation: splashZoomIn 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-tricolor-glow {
+  animation: pulseTricolorGlow 2s infinite ease-in-out;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 16s linear infinite;
+}
